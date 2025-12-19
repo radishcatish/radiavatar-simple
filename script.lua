@@ -13,12 +13,7 @@ function pings.communicate()
     sounds:stopSound("meow1")
     sounds:stopSound("meow2")
     sounds:stopSound("meow3")
-    sounds:playSound(
-        "meow" .. tostring(math.random(1, 3)),
-        player:getPos() + vec(0, 1.5, 0),
-        1,
-        math.random(75, 125) / 100
-    )
+    sounds:playSound("meow" .. tostring(math.random(1, 3)), player:getPos() + vec(0, 1.5, 0), 1, math.random(75, 125) / 100)
     animations.model.communicate:restart()
 end
 
