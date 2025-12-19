@@ -1,5 +1,6 @@
 
 vanilla_model.PLAYER:setVisible(false)
+vanilla_model.CAPE:setVisible(false)
 nameplate.ENTITY:setText('[{"text":"radi","color":"#ffeeb8"}]')
 nameplate.ENTITY:setPivot(0, 2.5, 0)
 nameplate.CHAT:setText('[{"text":"radi","color":"#c2edff"}]')
