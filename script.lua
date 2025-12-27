@@ -7,11 +7,13 @@ function pings.communicate()
     if not player:isLoaded() then
         return
     end
-    sounds:stopSound("meow1")
-    sounds:stopSound("meow2")
-    sounds:stopSound("meow3")
-    sounds:playSound("meow" .. tostring(math.random(1, 3)), player:getPos() + vec(0, 1.5, 0), 1, math.random(75, 125) / 100)
     animations.model.communicate:restart()
+    for i=1,5 do sounds:stopSound("meow" .. i) end
+    sounds["meow" .. tostring(math.random(1, 5))]
+        :setPitch(math.random(75, 125) / 100)
+        :setPos(models.model.root.Head.Ears:partToWorldMatrix():apply())
+        :setSubtitle("Radi meows")
+        :play()
 end
 
 keybinds:newKeybind("peak communication", "key.keyboard.r", false).press = function()
