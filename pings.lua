@@ -30,7 +30,9 @@ end
 
 
 
-printTable(textures:getTextures())
+vanilla_model.HAT:setVisible(false)
+vanilla_model.CAPE:setVisible(false)
+vanilla_model.JACKET:setVisible(false)
 models.model.Head:setSecondaryTexture("CUSTOM", textures["star"])
 
 local wobbleLib = require("wobwob").new()
