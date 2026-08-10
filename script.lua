@@ -1,4 +1,39 @@
 
+local function meow()
+    animations.model.communicate:restart()
+    for i=1,5 do sounds:stopSound("meow" .. i) end
+    sounds["meow" .. tostring(math.random(1, 5))]
+        :setPitch(math.random(75, 125) / 100)
+        :setPos(models.model.Head:partToWorldMatrix():apply())
+        :setSubtitle("Radi meows")
+        :play()
+end
+function pings.meowmsg()
+    animations.model.message:restart()
+    for i=1,5 do sounds:stopSound("meow" .. i) end
+    sounds["text"]
+        :setPitch(math.random(75, 125) / 100)
+        :setPos(models.model.Head:partToWorldMatrix():apply())
+        :setSubtitle("Radi meows")
+        :play()
+end
+function pings.communicate()
+    if player:isLoaded() then meow() end
+end
+keybinds:newKeybind("peak communication", "key.keyboard.r", false).press = function()
+    pings.communicate()
+end
+function events.chat_send_message(msg)
+    pings.meowmsg()
+    return msg
+end
+
+
+
+vanilla_model.HAT:setVisible(false)
+vanilla_model.CAPE:setVisible(false)
+vanilla_model.JACKET:setVisible(false)
+models.model.Head:setSecondaryTexture("CUSTOM", textures["star"])
 
 
 local survivalplate =
