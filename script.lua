@@ -71,7 +71,7 @@ function events.render(delta)
 
     tailx, taily, tailz =
     math.lerp(tailx, 30 / nonIdle, delta), 
-    math.lerp(taily, vanilla_model.LEFT_LEG:getOriginRot().x / 10 + idleRot, delta), 
+    math.lerp(taily, vanilla_model.RIGHT_LEG:getOriginRot().x / 10 + idleRot, delta), 
     0
 
     models.model.Body.Tail:setRot(tailx, taily, tailz)
