@@ -39,7 +39,7 @@ animations.model.tail:play()
 local survivalplate =
     models:newText("health"):setScale(.25):setPos(0, 42, 0):alignment("center"):background(true)
 function events.tick()
-      survivalplate:setVisible(host:isHost() and not renderer:isFirstPerson())
+      survivalplate:setVisible(not renderer:isFirstPerson())
 
     local hp = math.floor(player:getHealth())
     local absorption = player:getAbsorptionAmount()
@@ -76,3 +76,9 @@ function events.render(delta)
 
     models.model.Body.Tail:setRot(tailx, taily, tailz)
 end
+
+
+
+
+
+
